@@ -30,13 +30,13 @@ public class Login {
         driver.manage().window().maximize();
     }
 
-//    @After
-//    public void afterTest() {
-//        if (driver != null) {
-//            driver.close();
-//            driver.quit();
-//        }
-//    }
+    @After
+    public void afterTest() {
+        if (driver != null) {
+            driver.close();
+            driver.quit();
+        }
+    }
 
     @Test
     public void testLogin() throws InterruptedException {
