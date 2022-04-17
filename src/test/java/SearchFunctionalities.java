@@ -5,15 +5,11 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class SearchFunctionalities {
 
     ChromeDriver driver;
-    String url = "https://batdongsan.com.vn/";
+    final String url = "https://batdongsan.com.vn/";
 
     @Before
     public void beforeTest() {
