@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.HashMap;
 import java.util.List;
@@ -23,19 +24,16 @@ public class Login {
                 + "src/test/resources/chromedriver/chromedriver.exe");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--enable-javascript");
+        options.addArguments("start-maximized");
+        options.addArguments("--disable-web-security");
+
+//
+//        DesiredCapabilities capabilities = new DesiredCapabilities();
+//        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+//        options.merge(capabilities);
 
         driver = new ChromeDriver(options);
-
         driver.get(url);
-        driver.manage().window().maximize();
-    }
-
-    @After
-    public void afterTest() {
-        if (driver != null) {
-            driver.close();
-            driver.quit();
-        }
     }
 
     @Test
@@ -67,4 +65,12 @@ public class Login {
         WebElement searchBtn = driver.findElement(By.xpath("//button[@class='js__btn-login re__btn re__btn-pr-solid--md']"));
         searchBtn.click();
     }
+
+//    @After
+//    public void afterTest() {
+//        if (driver != null) {
+//            driver.close();
+//            driver.quit();
+//        }
+//    }
 }
